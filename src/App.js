@@ -1,25 +1,59 @@
 import React from 'react';
-import profileImage from './img/download.jpg';
+import { Router } from '@reach/router'
+import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
+import Portfolio from './pages/Portfolio.jsx'
+import Projects from './pages/Projects.jsx'
+import Home from './pages/Home.jsx'
+import ResponsiveNavigation from './components/ResponsiveNavigation'
+import logo from './img/logo512.png';
 import './App.css';
-import Home from './Home';
-import About from './About';
-import Projects from './Projects';
-import Contact from './Contact';
-import {Route, Link} from 'react-router-dom'
-import NavBar from './NavBar';
 
 function App() {
+  const navLinks = [
+    {
+      text: 'Home',
+      path:'/',
+      icon: 'ion-ios-home'
+    },
+    {
+      text: 'Contact',
+      path: '/contact',
+      icon: 'ion-ios-megaphone'
+    },
+    {
+      text: 'About',
+      path:'/about',
+      icon: 'ion-ios-body'
+    },
+    {
+      text: 'Projects',
+      path:'/projects',
+      icon: 'ion-ios-folder-open'
+    },
+    {
+      text: 'Portfolio',
+      path:'/portfolio',
+      icon: 'ion-ios-briefcase'
+    }
+  ]
+
   return (
     <div className="App">
-      <NavBar />
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/about" component={About}/>
-      <Route exact path="/projects" component={Projects}/>
-      <Route exact path="/contact" component={Contact}/>
-      
-      <h1>My React App</h1>
-      <h2>Author: John Mikos</h2>
-      <img src={profileImage} alt="profile-image" />
+      <ResponsiveNavigation
+        navLinks = {navLinks}
+        logo = {logo}
+        background="#fff"
+				hoverBackground="#ddd"
+				linkColor="#777"
+      />
+      <Router>
+        <Contact path="/contact"/>
+        <Home path="/"/>
+        <Projects path="/projects"/>
+        <About path="/about"/>
+        <Portfolio path="/portfolio"/>
+      </Router>
     </div>
   );
 }
