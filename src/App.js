@@ -17,14 +17,9 @@ function App() {
       icon: 'ion-ios-home'
     },
     {
-      text: 'Contact',
-      path: '/contact',
-      icon: 'ion-ios-megaphone'
-    },
-    {
-      text: 'About',
-      path:'/about',
-      icon: 'ion-ios-body'
+      text: 'Portfolio',
+      path:'/portfolio',
+      icon: 'ion-ios-briefcase'
     },
     {
       text: 'Projects',
@@ -32,9 +27,14 @@ function App() {
       icon: 'ion-ios-folder-open'
     },
     {
-      text: 'Portfolio',
-      path:'/portfolio',
-      icon: 'ion-ios-briefcase'
+      text: 'About',
+      path:'/about',
+      icon: 'ion-ios-body'
+    },
+    {
+      text: 'Contact',
+      path: '/contact',
+      icon: 'ion-ios-megaphone'
     }
   ]
 
